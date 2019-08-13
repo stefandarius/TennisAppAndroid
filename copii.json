@@ -1,0 +1,34 @@
+[
+  {
+    "id": 2,
+    "nume": "Iordache",
+    "prenume": "Stefan",
+    "data": 990133200000,
+    "gen": true,
+    "brat": true,
+    "backhand": true,
+    "medStatus": "sanatos",
+    "antrenor": {
+      "id": 1,
+      "nume": "Mocanu",
+      "prenume": "Madalin",
+      "data": 785973600000
+    }
+  },
+  {
+    "id": 7,
+    "nume": "Iordache",
+    "prenume": "Stefan",
+    "data": 990133200000,
+    "gen": true,
+    "brat": true,
+    "backhand": true,
+    "medStatus": "sanatos",
+    "antrenor": {
+      "id": 6,
+      "nume": "Mocanu",
+      "prenume": "Madalin",
+      "data": 785973600000
+    }
+  }
+]

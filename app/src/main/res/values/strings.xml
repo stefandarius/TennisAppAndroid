@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Tenis App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="selectati_antrenor">Selectati antrenor</string>
+    <string name="selectati_dificultate">Selectati gradul de dificultate</string>
+    <string name="selectati_antrenament">Selectati antrenamentul</string>
+    <string name="eroare">eroare</string>
+
+
+    <string-array name="niveluri">
+        <item>--Selectati nivel--</item>
+        <item>Incepator</item>
+        <item>Intermediar</item>
+        <item>Avansat</item>
+        <item>Expert</item>
+        <item>Profesionist</item>
+    </string-array>
+
+    <string-array name="stareSanatate">
+        <item>--Selectati stare--</item>
+        <item>Sanatos</item>
+        <item>Bolnav</item>
+        <item>Accidentat</item>
+    </string-array>
+
+    <string-array name="gradDificultate">
+        <item>--Selectati dificultatea--</item>
+        <item>Usor</item>
+        <item>Mediu</item>
+        <item>Greu</item>
+    </string-array>
+
+    <string-array name="numeTabrui">
+        <item>Calendar</item>
+        <item>Lista sportivi</item>
+        <item>Statistici</item>
+        <item>Notificari</item>
+    </string-array>
+</resources>
