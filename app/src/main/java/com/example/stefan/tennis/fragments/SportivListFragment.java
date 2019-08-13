@@ -3,6 +3,7 @@ package com.example.stefan.tennis.fragments;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.SearchView;
 
@@ -76,6 +77,7 @@ public class SportivListFragment extends BaseFragment implements AddSportivFragm
 
     @Override
     public void setupTollbar() {
+        Log.v("fab", "s-a apelat!");
         fab = getActivity().findViewById(R.id.fab);
         fab.setVisibility(View.VISIBLE);
         toolbar.setTitle("Lista sportivi");

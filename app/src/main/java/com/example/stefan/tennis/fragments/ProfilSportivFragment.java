@@ -69,7 +69,8 @@ public class ProfilSportivFragment extends BaseFragment implements AbonamenteLis
     @Override
     public void onDestroy() {
         super.onDestroy();
-        fab.setVisibility(View.INVISIBLE);
+//        fab.setVisibility(View.VISIBLE);
+        speedDialView.setVisibility(View.GONE);
     }
 
     public void initUI(View view) {

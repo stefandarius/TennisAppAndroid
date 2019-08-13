@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             toggle.setDrawerIndicatorEnabled(true);
             toolbar.setNavigationIcon(R.drawable.ic_menu_black_24dp);
-
+            ((BaseFragment) adapter.getItem(viewPager.getCurrentItem())).setupTollbar();
             navBar.setVisibility(View.VISIBLE);
             toolbar.setNavigationOnClickListener(v -> {
                 drawer.openDrawer(GravityCompat.START);

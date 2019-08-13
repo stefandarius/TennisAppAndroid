@@ -185,7 +185,7 @@ public class AddIstoricAntrenamentFragment extends BaseFragment implements DateP
             return;
         }
         if (validate) {
-            int sId = getArguments().getInt("sId");
+            int sId = getArguments().getInt("sId", 0);
             if (istoricAntrenamente == null) {
                 istoricAntrenamente = new IstoricAntrenamente();
             }
@@ -198,8 +198,8 @@ public class AddIstoricAntrenamentFragment extends BaseFragment implements DateP
             if (!args.containsKey("neev") && abonamenteSportivi == null)
                 Toasty.info(getActivity(), "Sportivul nu are abonamente active!").show();
             else {
-                Log.v(TAG, abonamenteSportivi.toString());
-                istoricAntrenamente.setAbonamanteSportiv(abonamenteSportivi);
+                if (sId == 0)
+                    istoricAntrenamente.setAbonamanteSportiv(abonamenteSportivi);
                 onAntrenamentAdaugat.onAntrenamentAdaugat(istoricAntrenamente);
                 getActivity().getSupportFragmentManager().popBackStack();
             }
