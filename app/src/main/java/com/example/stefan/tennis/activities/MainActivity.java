@@ -16,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.evernote.android.job.JobManager;
 import com.example.stefan.tennis.R;
 import com.example.stefan.tennis.adapters.FragmentViewPagerAdapter;
 import com.example.stefan.tennis.adapters.ViewPagerAdapter;
@@ -29,8 +28,6 @@ import com.example.stefan.tennis.fragments.SetariFragment;
 import com.example.stefan.tennis.fragments.SportivListFragment;
 import com.example.stefan.tennis.fragments.TipuriAntrenamenteListFragment;
 import com.example.stefan.tennis.utils.ProjectUtils;
-import com.example.stefan.tennis.workers.DemoJobCreator;
-import com.example.stefan.tennis.workers.NotificariZilnice;
 
 import java.util.ArrayList;
 
@@ -86,8 +83,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setupViewPager(viewPager);
         initializeNavigationBottom();
-        JobManager.create(this).addJobCreator(new DemoJobCreator());
-        NotificariZilnice.schedule();
     }
 
 

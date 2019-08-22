@@ -2,6 +2,8 @@ package com.example.stefan.tennis.utils;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -37,6 +39,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.example.stefan.tennis.R;
+import com.example.stefan.tennis.broadcasters.NotificationAlarmReceiver;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -54,6 +57,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
+
+import static android.content.Context.ALARM_SERVICE;
 
 /**
  * Created by Marian on 30.11.2017.
@@ -113,6 +118,28 @@ public class ProjectUtils {
         fgt.replace(R.id.main_container, fragment, tag);
         //}
         fgt.commitAllowingStateLoss();
+    }
+
+    public static void rescheduele(Context context, Calendar alarmStartTime) {
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
+        Intent alarmIntent = new Intent(context, NotificationAlarmReceiver.class); // AlarmReceiver1 = broadcast receiver
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        alarmIntent.setData((Uri.parse("custom://" + System.currentTimeMillis())));
+        alarmManager.cancel(pendingIntent);
+
+//        Calendar alarmStartTime = Calendar.getInstance();
+        Calendar now = Calendar.getInstance();
+//        alarmStartTime.set(Calendar.HOUR_OF_DAY, setari.getOra());
+//        alarmStartTime.set(Calendar.MINUTE, setari.getMinut());
+//        alarmStartTime.set(Calendar.SECOND, 0);
+        if (now.after(alarmStartTime)) {
+            Log.d("Hey", "Added a day");
+            alarmStartTime.add(Calendar.DATE, 1);
+        }
+
+        alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, alarmStartTime.getTimeInMillis(), pendingIntent);
+        Log.d("Alarm", "Alarms set for everyday 8 am.");
     }
 
 
