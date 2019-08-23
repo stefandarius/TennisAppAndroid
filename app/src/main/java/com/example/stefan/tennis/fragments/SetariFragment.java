@@ -82,6 +82,7 @@ public class SetariFragment extends BaseFragment implements TimePickerFragment.O
         setari.setOra(Integer.parseInt(ora[0]));
         setari.setMinut(Integer.parseInt(ora[1]));
         getActivity().getSupportFragmentManager().popBackStack();
+        ProjectUtils.hideSoftKeyboard(getActivity());
 
         Calendar alarmStartTime = Calendar.getInstance();
         alarmStartTime.set(Calendar.HOUR_OF_DAY, setari.getOra());

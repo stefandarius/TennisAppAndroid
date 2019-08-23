@@ -4,7 +4,6 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import com.example.stefan.tennis.R;
@@ -17,9 +16,6 @@ import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
-import org.threeten.bp.DayOfWeek;
-
-import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -60,7 +56,9 @@ public class CalendarFragment extends BaseFragment {
         istoricAntrenamenteAdapter.updateList(IstoricAntrenamente.getAntrenamenteByDate(new Date()));
         recyclerView.setAdapter(istoricAntrenamenteAdapter);
 
-        calendarView.state().edit().setFirstDayOfWeek(DayOfWeek.of(Calendar.SUNDAY)).commit();
+        // TODO: 8/23/2019 set first day of week 
+
+        //calendarView.state().edit().setFirstDayOfWeek(DayOfWeek.of(Calendar.MONDAY)).commit();
         calendarView.addDecorator(new TodayDecorator());
 
         decoreazaLuna(CalendarDay.today());
@@ -82,7 +80,6 @@ public class CalendarFragment extends BaseFragment {
     private void decoreazaLuna(CalendarDay date) {
         List<NrEvenimente> dates = NrEvenimente.getAllByMonth(String.valueOf(date.getMonth()), String.valueOf(date.getYear()));
         for (NrEvenimente nr : dates) {
-            Log.v("adaugat", "tralala " + nr.getCalendarDay().getDate().toString() + " " + nr.getNumar());
             calendarView.addDecorator(new NumarDecorator(nr));
         }
         calendarView.invalidateDecorators();

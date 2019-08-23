@@ -1,7 +1,5 @@
 package com.example.stefan.tennis.decorators;
 
-import android.util.Log;
-
 import com.example.stefan.tennis.spans.TextSpan;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
@@ -22,7 +20,6 @@ public class TextDecorator implements DayViewDecorator {
     public boolean shouldDecorate(CalendarDay day) {
         if (dates.containsKey(day)) {
             text = dates.get(day);
-            Log.v("evenimente", "here " + day.getDate().toString() + " " + text);
             return true;
         }
         return false;

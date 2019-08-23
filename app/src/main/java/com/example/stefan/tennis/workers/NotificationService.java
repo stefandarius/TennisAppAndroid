@@ -30,35 +30,6 @@ public class NotificationService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-//        Context context = this.getApplicationContext();
-////        notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
-////        Intent mIntent = new Intent(this, NotificariFragment.class);
-////        Bundle bundle = new Bundle();
-////        bundle.putString("test", "test");
-////        mIntent.putExtras(bundle);
-////        pendingIntent = PendingIntent.getActivity(context, 0, mIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-////
-////        Resources res = this.getResources();
-////        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-////        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-////        notification = new NotificationCompat.Builder(this)
-////                .setContentIntent(pendingIntent)
-////                .setSmallIcon(R.drawable.acces_alarm)
-////                .setLargeIcon(BitmapFactory.decodeResource(res, R.drawable.acces_alarm))
-////                .setTicker("ticker value")
-////                .setAutoCancel(true)
-////                .setPriority(8)
-////                .setSound(soundUri)
-////                .setContentTitle("Notif title")
-////                .setContentText("Text").build();
-////        notification.flags |= Notification.FLAG_AUTO_CANCEL | Notification.FLAG_SHOW_LIGHTS;
-////        notification.defaults |= Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE;
-////        notification.ledARGB = 0xFFFFA500;
-////        notification.ledOnMS = 800;
-////        notification.ledOffMS = 1000;
-////        notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-////        notificationManager.notify(NOTIFICATION_ID, notification);
-
         displayNotification("Antrenamente neevaluate",
                 "Aveti de evaluat " + IstoricAntrenamente.getNumarAntrenamenteWithoutRating() + " antrenamente.");
 
